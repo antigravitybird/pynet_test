@@ -1,0 +1,17 @@
+#!usr/bin/env python
+
+with open('show_version.txt') as f:
+    show_ver = f.readlines()
+
+serial_number = 'not found'
+for line in show_ver:
+    if 'Processor board ID' in line:
+        print "splitting on D"
+        trash, serial_number = line.split("D ")
+
+print "Throwing away {}".format(trash)
+print serial_number
+
+#print "\nSerial Number is {}\n".format(serial_number)
+
+
